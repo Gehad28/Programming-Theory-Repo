@@ -11,7 +11,9 @@ public class Canvas : MonoBehaviour
     {
         color.text = "";
     }
-
+    
+    
+    // ABSTRACTION
     public void displayColor(string shape)
     {
         if (shape == "Cube")

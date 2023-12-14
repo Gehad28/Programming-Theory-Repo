@@ -1,20 +1,26 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class Shape : MonoBehaviour
+public abstract class Shape : MonoBehaviour
 {
-
-    // Start is called before the first frame update
-    void Start()
+    public TextMeshProUGUI text;
+    public GameObject _canvas;
+    private void Start()
     {
         
     }
 
-    // Update is called once per frame
-    void Update()
+    protected virtual void DisplayText()
     {
-        
+        text.text = "This shape is: ";
+    }
+
+    private void OnMouseDown()
+    {
+        DisplayText();
+        _canvas.GetComponent<Canvas>().displayColor(gameObject.name);
     }
 }
